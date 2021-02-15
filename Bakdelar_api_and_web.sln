@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bakdelar", "..\Web\Bakdelar.csproj", "{7BF8D003-C4FA-419F-8AC7-E55DCA1ACD3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApi", "..\API\TestApi.csproj", "{6A25EE42-9DEE-4933-B95E-F91DB649E411}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BF8D003-C4FA-419F-8AC7-E55DCA1ACD3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF8D003-C4FA-419F-8AC7-E55DCA1ACD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF8D003-C4FA-419F-8AC7-E55DCA1ACD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF8D003-C4FA-419F-8AC7-E55DCA1ACD3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A25EE42-9DEE-4933-B95E-F91DB649E411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A25EE42-9DEE-4933-B95E-F91DB649E411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A25EE42-9DEE-4933-B95E-F91DB649E411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A25EE42-9DEE-4933-B95E-F91DB649E411}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C29BF5F5-A81E-4DCC-AE31-CE2E36B3763A}
+	EndGlobalSection
+EndGlobal

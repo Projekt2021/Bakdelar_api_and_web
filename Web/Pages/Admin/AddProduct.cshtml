@@ -1,0 +1,29 @@
+﻿@page  "{ImageLink?}"
+@model Bakdelar.Pages.Admin.AddProductModel
+@{
+}
+<form method="post">
+    <label for="productName">Produktnamn:</label>
+    <input type="text" required="required" asp-for="Product.ProductName" name="productName"><br />
+    <label for="productDescription">Produktbeskrivning:</label>
+    <input type="text" required="required" asp-for="Product.ProductDescription" name="productDescription"><br />
+    <label for="salePrice">Produktpris:</label>
+    <input type="number" required="required" step="0.01" asp-for="Product.SalePrice" name="salePrice"><br />
+    <label for="productImageID">Välj en bild:</label>
+
+    <select asp-for="ProductImageID" name="productImageID">
+        @foreach (var productImage in Model.ProductImages)
+        {
+            <option style="width: 15rem;" value="@productImage.ProductImageID">@productImage.ImageUrl</option>
+        }
+    </select>
+    <br />
+    <label for="productCategory">Välj en kategori:</label>
+    <select asp-for="Product.CategoryID" name="productCategory">
+        @foreach (var category in Model.Categories)
+        {
+            <option style="width: 15rem;" value="@category.CategoryID">@category.CategoryText</option>
+        }
+    </select>
+    <input type="submit">
+</form>
