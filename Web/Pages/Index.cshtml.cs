@@ -50,7 +50,7 @@ namespace Bakdelar.Pages
             }
             catch (Exception e)
             {
-                Redirect("/");
+                Redirect("~/Error");
             }
             return jsonText;
         }
