@@ -14,7 +14,7 @@ namespace TestApi
     {
         public static void Main(string[] args)
         {
-            new BakdelarDBContext().Database.EnsureCreated();
+            //new BakdelarDBContext().Database.EnsureCreated();
             CreateHostBuilder(args).Build().Run();
         }
 
