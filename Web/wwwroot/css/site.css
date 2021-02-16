@@ -11,7 +11,7 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 #banner-image {
-    background-image: inherit;
+    /*background-image: inherit;*/
     background-attachment: fixed;
 }
 
@@ -28,8 +28,8 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 #body {
     /*background-image: url(../images/body_bg.gif);*/
-    background: rgb(227,126,249);
-    background: radial-gradient(circle, rgba(227,126,249,1) 0%, rgba(244,132,155,1) 100%);
+    background: rgb(218,197,206);
+    background: radial-gradient(circle, rgba(218,197,206,1) 0%, rgba(171,208,185,1) 100%);
     width: 100%;
     height: auto;
     background-size: cover;
@@ -46,15 +46,19 @@ span{
     overflow: hidden;
 }
 body {
-    background-image: url("../images/banner.jpg");
+    background-image: url("../images/cooking.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     /*padding-top: 5.1rem;*/
 }
 
 .navbar {
-    background-image: inherit;
-    background-repeat: inherit; /* Determine what direction the image will repeat */
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    /*background-image: inherit;
+    background-repeat: inherit;*/ /* Determine what direction the image will repeat */
     /*background-position: inherit;*/ /* Where the image will be positioned relative to "top, right, bottom, and/or left */
-    background-attachment: fixed; /* use with "fixed" to make it scroll with page */
+    /*background-attachment: fixed;*/ /* use with "fixed" to make it scroll with page */
     /*margin-bottom: 50px !important;*/
 }
 nav {
