@@ -49,6 +49,8 @@ body {
     background-image: url("../images/cooking.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
     /*padding-top: 5.1rem;*/
 }
 

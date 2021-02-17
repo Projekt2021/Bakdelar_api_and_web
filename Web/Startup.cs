@@ -14,7 +14,6 @@ namespace Bakdelar
 {
     public class Startup
     {
-        // testing GitHub
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
