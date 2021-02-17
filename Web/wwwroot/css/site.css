@@ -130,3 +130,7 @@ html {
   min-height: 100%;
 }
 
+.footer_barrier{
+    height:1rem;
+    width:100%;
+}
