@@ -131,6 +131,10 @@ html {
 }
 
 .footer_barrier{
-    height:1rem;
+    height:0.5rem;
     width:100%;
+}
+
+.footer_background {
+    background-color: floralwhite;
 }
