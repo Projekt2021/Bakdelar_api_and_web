@@ -26,17 +26,35 @@ namespace Bakdelar.Pages
         {
             //länken till ProductController i APIt
 
-            using var httpClient = new HttpClient();
-
-            //hämtar listan med produkter ifrån apit
-            Products = await httpClient.GetFromJsonAsync<List<Classes.Product>>(Classes.APIConnectionInfo.ProductsURL);
-
+            Products = await GetProductsAsync();
 
             //är det inga produkter i listan är det något fel
             if (!Products.Any())
             {
                 Error = true;
             }
+        }
+
+
+        public async Task<List<Classes.Product>> GetProductsAsync()
+        {
+            using var httpClient = new HttpClient();
+
+            //hämtar listan med produkter ifrån apit
+            return await httpClient.GetFromJsonAsync<List<Classes.Product>>(Classes.APIConnectionInfo.ProductsURL)
+                                   .ContinueWith<List<Classes.Product>>(task =>
+            {
+                if(task.IsFaulted)
+                {
+                    Console.WriteLine(task.Exception.Message);
+                    return new();
+                }
+                else
+                {
+                    return task.Result;
+                }
+            });
+
         }
     }
 }
