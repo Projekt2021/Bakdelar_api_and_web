@@ -22,15 +22,14 @@ namespace Bakdelar.Pages
         {
             _logger = logger;
         }
-        public void OnGet()
+        public async Task OnGetAsync()
         {
             //länken till ProductController i APIt
 
             using var httpClient = new HttpClient();
 
             //hämtar listan med produkter ifrån apit
-            Products = httpClient.GetFromJsonAsync<List<Classes.Product>>(Classes.APIConnectionInfo.ProductsURL).Result;
-
+            Products = await httpClient.GetFromJsonAsync<List<Classes.Product>>(Classes.APIConnectionInfo.ProductsURL);
 
 
             //är det inga produkter i listan är det något fel
