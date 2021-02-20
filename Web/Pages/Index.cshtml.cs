@@ -25,12 +25,11 @@ namespace Bakdelar.Pages
         public void OnGet()
         {
             //länken till ProductController i APIt
-            string productsApiLink = "https://localhost:44347/api/Products";
 
             using var httpClient = new HttpClient();
 
             //hämtar listan med produkter ifrån apit
-            Products = httpClient.GetFromJsonAsync<List<Classes.Product>>(productsApiLink).Result;
+            Products = httpClient.GetFromJsonAsync<List<Classes.Product>>(Classes.APIConnectionInfo.ProductsURL).Result;
 
 
 

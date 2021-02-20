@@ -38,7 +38,7 @@ namespace Bakdelar.Pages
 
 
                     //gets the data for the product from api
-                    Product = httpClient.GetFromJsonAsync<Classes.Product>(productApiLink).Result;
+                    Product = httpClient.GetFromJsonAsync<Classes.Product>(Classes.APIConnectionInfo.ProductsURL + $"/{Id}").Result;
 
                     //sets the title to the product name
                     ViewData["Title"] = Product.ProductName;
