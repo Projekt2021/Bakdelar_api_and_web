@@ -2,11 +2,6 @@ USE [master]
 GO
 /****** Object:  Database [BakdelarDB]    Script Date: 2021-02-10 14:53:43 ******/
 CREATE DATABASE [BakdelarDB]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'BakdelarDB', FILENAME = N'C:\Users\Robin\BakdelarDB.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'BakdelarDB_log', FILENAME = N'C:\Users\Robin\BakdelarDB_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 GO
 ALTER DATABASE [BakdelarDB] SET COMPATIBILITY_LEVEL = 130
 GO
