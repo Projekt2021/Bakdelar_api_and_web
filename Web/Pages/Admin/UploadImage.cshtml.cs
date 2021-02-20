@@ -42,9 +42,6 @@ namespace Bakdelar.Pages.Admin
 
         public void OnGet()
         {
-           //var getProductsURL = "https://localhost:44347/api/Products";
-           //using HttpClient httpClient = new HttpClient();
-           //Products = httpClient.GetFromJsonAsync<List<Classes.Product>>(getProductsURL).Result;
         }
 
 
@@ -67,8 +64,6 @@ namespace Bakdelar.Pages.Admin
 
 
 
-            //api url for posting the productimage so its saved into the database
-            string postURL = "https://localhost:44347/api/ProductImages";
 
 
 
@@ -85,7 +80,7 @@ namespace Bakdelar.Pages.Admin
             //httpClient
 
             //the productimage is posted to the api
-            var response = await httpClient.PostAsJsonAsync(postURL, productImage);
+            var response = await httpClient.PostAsJsonAsync(Classes.APIConnectionInfo.ProductImagesURL, productImage);
 
             //the posted product image is read to get the id it was assigned
             Classes.ProductImage postedProductImage = await response.Content.ReadFromJsonAsync<Classes.ProductImage>();

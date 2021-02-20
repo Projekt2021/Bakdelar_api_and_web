@@ -61,12 +61,12 @@ namespace Bakdelar.Classes
             get 
             {
                 return APIConnectionNode.SelectToken("Controllers")
-                                        .SelectToken("Products")
+                                        .SelectToken("ProductImages")
                                         .Value<string>();
             } 
         }
 
-        private static string CategoriesController
+        public static string CategoriesController
         {
             get
             {
@@ -89,6 +89,13 @@ namespace Bakdelar.Classes
             get
             {
                 return $"{IP}:{Port}/{ProductImagesController}";
+            }
+        }
+        public static string CategoriesURL
+        {
+            get
+            {
+                return $"{IP}:{Port}/{CategoriesController}";
             }
         }
     }
