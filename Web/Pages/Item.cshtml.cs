@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Json;
 
 namespace Bakdelar.Pages
 {
@@ -20,42 +22,33 @@ namespace Bakdelar.Pages
         public void OnGet()
         {
 
-            //gets the data for the product from api
-            var jsonText = GetProductInfo("https://localhost:44347/api/Products/" + Id);
-
-            //if the current product is in the database
-            if (jsonText != string.Empty)
-            {
-                //camelcase policy to map the properties correctly
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                };
-
-                //sets the product to what was recieved from the api
-                Product = JsonSerializer.Deserialize<Classes.Product>(jsonText, options);
-
-                //sets the title to the product name
-                ViewData["Title"] = Product.ProductName;
-            }
-            else
+            if (string.IsNullOrWhiteSpace(Id))
             {
                 Error = true;
             }
-        }
+            else
+            {
+                try
+                {
+                    using var httpClient = new HttpClient();
 
-        string GetProductInfo(string jsonDataURL)
-        {
-            string jsonText = "";
-            try
-            {
-                jsonText = (new WebClient()).DownloadString(jsonDataURL);
+                    //link to the product in the API
+                    string productApiLink = "https://localhost:44347/api/Products/" + Id;
+
+
+
+                    //gets the data for the product from api
+                    Product = httpClient.GetFromJsonAsync<Classes.Product>(productApiLink).Result;
+
+                    //sets the title to the product name
+                    ViewData["Title"] = Product.ProductName;
+                }
+                catch(AggregateException)
+                {
+                    Error = true;
+                }
             }
-            catch(Exception e)
-            {
-                Redirect("/");
-            }
-            return jsonText;
+            
         }
     }
 }

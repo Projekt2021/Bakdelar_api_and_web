@@ -26,7 +26,7 @@ namespace TestApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<object>>> GetProducts(string adminToken)
         {
-            //ToBase64("userisadminshowfullproduct")
+            //string.ToBase64("userisadminshowfullproduct")
             //if (adminToken == "dXNlcmlzYWRtaW5zaG93ZnVsbHByb2R1Y3Q=")
             //{
 

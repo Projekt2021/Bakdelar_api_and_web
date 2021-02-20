@@ -21,6 +21,7 @@ namespace Bakdelar.Pages.Admin
         {
             _environment = environment;
         }
+
         [BindProperty]
         public Classes.ProductImage ProductImage { get; set; }
 
@@ -55,17 +56,30 @@ namespace Bakdelar.Pages.Admin
 
             //where the file is to be saved
             var file = _environment.WebRootPath + "\\images\\products\\" + Image.FileName;
+
+
+
+
             using (var fileStream = new FileStream(file, FileMode.Create))
             {
                 await Image.CopyToAsync(fileStream);
             }
+
+
+
             //api url for posting the productimage so its saved into the database
             string postURL = "https://localhost:44347/api/ProductImages";
+
+
+
             using HttpClient httpClient = new HttpClient();
             if (!ModelState.IsValid)
             {
                 return Page();
             }
+
+
+
             //the partial path is stored in a product image object
             Classes.ProductImage productImage = new Classes.ProductImage() { ImageUrl = partialFilePath };
             //httpClient
